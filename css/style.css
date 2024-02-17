@@ -1,0 +1,177 @@
+/* End Variables */
+/* Start Global Rules */
+
+html {
+  scroll-behavior: smooth;
+}
+body {
+  height: 100%vh;
+  background-image: url(../images/background.png);
+  background-size:cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position:center;
+
+}
+.container {
+  padding-left: 5%;
+  padding-right: 5%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.header{
+  width: 100vw;
+  height: 100px;
+  text-align: center;
+  background:linear-gradient(180deg,rgba(255, 255, 255, 0.275),transparent);
+
+}
+.header   img{
+  height: inherit;
+}
+main{
+  height:calc(100vh - 100px) ;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.container{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  position: absolute;
+  bottom: 25%;
+}
+
+.container a{
+  text-decoration: none;
+  color: #f6f6f6;
+  padding: 1% 4%;
+  z-index: 2;
+  animation: flashing .5s 3; 
+  animation-delay:1.03s ;
+  animation-fill-mode: forwards;
+  opacity: 0;
+}
+.container a:hover , &.container aactive{
+  transform: scale(1.5);    
+}
+.container .car {
+  width: 10%;
+  position: relative;
+  animation: car 1s linear 1;
+}
+.car .carImg {
+  width: 100%;
+  filter: drop-shadow(2px 4px 6px black);
+}
+.car .wheel {
+  position: absolute;
+  width: 18.6%;
+  height: 30%;
+  bottom: 20%;
+  animation: wheel .5s linear 2;    
+}
+.car .wheel1{
+  left: 17.4%;
+}
+.car .wheel2{
+  right: 16%; 
+}
+
+@media (max-width: 768px) {
+  .container .car {
+    width: 30% !important;
+  }
+}
+
+.container::after{
+  content: "";
+  position: absolute;
+  bottom: -2%;
+  left: 3%;
+  width: 100%;
+  height: 100%;
+  clip-path: polygon(0 50%, 100% 0, 100% 100%);
+  background:linear-gradient(270deg,#fff6,transparent) ;
+  animation: flashing .5s 3; 
+  animation-delay:1s ;
+  animation-fill-mode: forwards;
+  opacity: 0;
+  
+}
+
+.container2{
+  bottom: 15%;
+}
+.container2 .car{
+  left:-5% ;
+} 
+.container3{
+  bottom: 5%;
+}
+.container3 .car{
+  left:-10% ;
+}
+@media (min-width: 768px) {
+  .container2 .car{
+      left:-2% ;
+  }
+  .container3 .car{
+      left:-4% ;
+  }
+}
+footer{
+  font-size: 10px;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+  color: goldenrod;
+  background-color: #100f0f;
+}
+
+
+
+@keyframes car {
+  0% {
+    transform: translateX(-150%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+
+}
+@keyframes wheel {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes flashing {
+  0% {
+    opacity: 1;
+  }
+  30% {
+    opacity: 0;
+  }
+  60% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+
+
+
